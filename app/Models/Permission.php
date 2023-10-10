@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Permission extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         "title",
     ];
@@ -16,6 +16,6 @@ class Permission extends Model
 
     // Relationships
     public function roles(){
-        $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Role::class);
     }
 }

@@ -5,7 +5,7 @@
             <div class="col-12">
 
                 <div class="bg-secondary rounded h-100 p-4">
-                    <h6 class="mb-4">User show </h6>
+                    <h6 class="mb-4">Role show </h6>
                     <table class="table table-dark">
                         <thead>
                         <tr>

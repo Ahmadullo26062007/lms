@@ -4,8 +4,8 @@
         <div class="row g-4">
             <div class="col-12">
                 <div class="bg-secondary rounded h-100 p-4">
-                    <h6 class="mb-4">User Update</h6>
-                    <form action="{{ route('users.update', $user->id) }}" method="post">
+                    <h6 class="mb-4">Role Update</h6>
+                    <form action="{{ route('roles.update', $role->id) }}" method="post">
                         @method('PUT')
                         @if ($errors->any())
                             @foreach ($errors->all() as $error)
@@ -16,25 +16,15 @@
                         @endif
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" name="name" class="form-control text-white" id="floatingInput"
-                                   placeholder="" value="{{$user->name}}">
-                            <label for="floatingInput">Name</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="number" name="phone_number" class="form-control text-white" id="floatingInput"
-                                   placeholder="" value="{{$user->phone_number}}">
-                            <label for="floatingInput">Phone Number</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" name="email" class="form-control text-white" id="floatingInput"
-                                   placeholder="name@example.com" value="{{$user->email}}">
-                            <label for="floatingInput">Email address(Nullable)</label>
+                            <input type="text" name="title" class="form-control text-white" id="floatingInput"
+                                   placeholder="" value="{{$role->title}}">
+                            <label for="floatingInput">Title</label>
                         </div>
                         <div>
-                            <select class="form-select" name="roles" multiple id="floatingSelect"
+                            <select class="form-select" name="permissions" multiple id="floatingSelect"
                                     aria-label="Floating label select example">
-                                @foreach($roles as $id=>$item)
-                                    <option @if( in_array($id, $user->roles->pluck('id')->toArray())) selected
+                                @foreach($permissions as $id=>$item)
+                                    <option @if( in_array($id, $role->permissions->pluck('id')->toArray())) selected
                                             @endif value="{{$id}}">{{$item}}</option>
                                 @endforeach
                             </select>
@@ -49,7 +39,7 @@
                             </svg>
                             Update
                         </button>
-                        <a class="btn btn-secondary mt-3" href="{{route('users.index')}}">
+                        <a class="btn btn-secondary mt-3" href="{{route('roles.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-arrow-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"

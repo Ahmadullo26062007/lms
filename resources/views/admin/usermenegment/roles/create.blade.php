@@ -4,8 +4,8 @@
         <div class="row g-4">
             <div class="col-12">
                 <div class="bg-secondary rounded h-100 p-4">
-                    <h6 class="mb-4">User Add</h6>
-                    <form action="{{route('users.store')}}" method="post">
+                    <h6 class="mb-4">Role Add</h6>
+                    <form action="{{route('roles.store')}}" method="post">
                         @if ($errors->any())
                             @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger" role="alert">
@@ -15,29 +15,15 @@
                         @endif
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" name="name" class="form-control text-white" id="floatingInput"
+                            <input type="text" name="title" class="form-control text-white" id="floatingInput"
                                    placeholder="">
-                            <label for="floatingInput">Name</label>
+                            <label for="floatingInput">Title</label>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="number" name="phone_number" class="form-control text-white" id="floatingInput"
-                                   placeholder="">
-                            <label for="floatingInput">Phone Number</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" name="password" class="form-control" id="floatingPassword"
-                                   placeholder="Password">
-                            <label for="floatingPassword">Password</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" name="email" class="form-control text-white" id="floatingInput"
-                                   placeholder="name@example.com">
-                            <label for="floatingInput">Email address(Nullable)</label>
-                        </div>
+
                         <div>
-                            <select class="form-select" name="roles" multiple id="floatingSelect"
+                            <select class="form-select" name="permissions" multiple id="floatingSelect"
                                     aria-label="Floating label select example">
-                                @foreach($roles as $id=>$item)
+                                @foreach($permissions as $id=>$item)
                                     <option value="{{$id}}">{{$item}}</option>
                                 @endforeach
                             </select>
@@ -52,7 +38,7 @@
                             </svg>
                             Create
                         </button>
-                        <a class="btn btn-secondary mt-3" href="{{route('users.index')}}">
+                        <a class="btn btn-secondary mt-3" href="{{route('roles.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-arrow-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"

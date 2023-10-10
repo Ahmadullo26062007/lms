@@ -4,8 +4,8 @@
         <div class="row g-4">
             <div class="col-12">
                 <div class="bg-secondary rounded h-100 p-4">
-                    <h6 class="mb-4">User Add</h6>
-                    <form action="{{route('roles.store')}}" method="post">
+                    <h6 class="mb-4">Permission Add</h6>
+                    <form action="{{route('permissions.store')}}" method="post">
                         @if ($errors->any())
                             @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger" role="alert">
@@ -19,16 +19,6 @@
                                    placeholder="">
                             <label for="floatingInput">Title</label>
                         </div>
-
-                        <div>
-                            <select class="form-select" name="permissions" multiple id="floatingSelect"
-                                    aria-label="Floating label select example">
-                                @foreach($permissions as $id=>$item)
-                                    <option value="{{$id}}">{{$item}}</option>
-                                @endforeach
-                            </select>
-                            <label for="floatingSelect">Works with selects</label>
-                        </div>
                         <button class="btn btn-primary mt-3" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-person-plus-fill" viewBox="0 0 16 16">
@@ -38,7 +28,7 @@
                             </svg>
                             Create
                         </button>
-                        <a class="btn btn-secondary mt-3" href="{{route('roles.index')}}">
+                        <a class="btn btn-secondary mt-3" href="{{route('permissions.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-arrow-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
