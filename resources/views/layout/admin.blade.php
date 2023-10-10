@@ -61,6 +61,14 @@
             <div class="navbar-nav w-100">
                 <a href="{{route('admin')}}" class="nav-item nav-link {{ (request()->is('admin')) ? 'active' : '' }}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                 <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle {{ (request()->is('permissions*')) ? 'active' : '' }} {{ (request()->is('users*')) ? 'active' : '' }} {{ (request()->is('roles*')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>User Manegment</a>
+                    <div class="dropdown-menu bg-transparent border-0">
+                        <a href="{{route('users.index')}}" class="dropdown-item {{ (request()->is('users*')) ? 'active' : '' }}">Users</a>
+                        <a href="{{route('roles.index')}}" class="dropdown-item {{ (request()->is('roles*')) ? 'active' : '' }}">Roles</a>
+                        <a href="{{route('permissions.index')}}" class="dropdown-item {{ (request()->is('permissions*')) ? 'active' : '' }}">Permissions</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ (request()->is('element')) ? 'active' : '' }} {{ (request()->is('button')) ? 'active' : '' }} {{ (request()->is('typography')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                     <div class="dropdown-menu bg-transparent border-0">
                         <a href="{{route('button')}}" class="dropdown-item {{ (request()->is('button*')) ? 'active' : '' }}">Buttons</a>

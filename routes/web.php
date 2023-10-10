@@ -21,6 +21,11 @@ Route::get('/admin', function (){
     return view('admin.index');
 })->name('admin');
 
+Route::resource('/users', \App\Http\Controllers\UsersController::class);
+Route::resource('/roles', \App\Http\Controllers\RoleController::class);
+Route::resource('/permissions', \App\Http\Controllers\PermissionController::class);
+
+
 Route::get('/404', function (){
     return view('admin.404');
 })->name('404');
