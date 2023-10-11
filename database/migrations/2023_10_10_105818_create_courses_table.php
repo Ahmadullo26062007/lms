@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('price');
 
             $table->foreign('teacher_id')->references('id')->on('teachers');
-            $table->foreign('category_id')->references('id')->on('sujects');
+            $table->foreign('category_id')->references('id')->on('subjects');
             $table->timestamps();
         });
     }
