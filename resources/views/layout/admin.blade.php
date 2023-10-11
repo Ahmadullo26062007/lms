@@ -71,25 +71,17 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="{{ route('students.index') }}" class="nav-link  {{ (request()->is('students*')) ? 'active' : '' }} {{ (request()->is('button')) ? 'active' : '' }} {{ (request()->is('students*')) ? 'active' : '' }}" ><i class=""></i>Students</a>
-                    <a href="#" class="nav-link dropdown-toggle {{ (request()->is('element')) ? 'active' : '' }} {{ (request()->is('button')) ? 'active' : '' }} {{ (request()->is('typography')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>   
+
+                    <a href="#" class="nav-link dropdown-toggle {{ (request()->is('element')) ? 'active' : '' }} {{ (request()->is('button')) ? 'active' : '' }} {{ (request()->is('typography')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="{{route('button')}}" class="dropdown-item {{ (request()->is('button*')) ? 'active' : '' }}">Buttons</a>
-                        <a href="{{route('typography')}}" class="dropdown-item {{ (request()->is('typography*')) ? 'active' : '' }}">Typography</a>
-                        <a href="{{route('element')}}" class="dropdown-item {{ (request()->is('element*')) ? 'active' : '' }}">Other Elements</a>
+
                     </div>
                 </div>
-                <a href="{{route('widget')}}" class="nav-item nav-link {{ (request()->is('widget')) ? 'active' : '' }}"><i class="fa fa-th me-2"></i>Widgets</a>
-                <a href="{{route('form')}}" class="nav-item nav-link {{ (request()->is('form')) ? 'active' : '' }}"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                <a href="{{route('table')}}" class="nav-item nav-link {{ (request()->is('table')) ? 'active' : '' }}"><i class="fa fa-table me-2"></i>Tables</a>
-                <a href="{{route('chart')}}" class="nav-item nav-link {{ (request()->is('chart')) ? 'active' : '' }}"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                <a href="{{route('students.index')}}" class="nav-item nav-link {{ (request()->is('students*')) ? 'active' : '' }}"><i class="fa fa-th me-2"></i>Students</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ (request()->is('404')) ? 'active' : '' }} {{ (request()->is('blank')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="{{route('signin')}}" class="dropdown-item">Sign In</a>
-                        <a href="{{route('signup')}}" class="dropdown-item">Sign Up</a>
-                        <a href="{{route('404')}}" class="dropdown-item {{ (request()->is('404')) ? 'active' : '' }}">404 Error</a>
-                        <a href="{{route('blank')}}" class="dropdown-item {{ (request()->is('blank')) ? 'active' : '' }}">Blank Page</a>
+
                     </div>
                 </div>
             </div>
