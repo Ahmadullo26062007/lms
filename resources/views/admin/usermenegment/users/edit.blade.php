@@ -30,15 +30,12 @@
                                    placeholder="name@example.com" value="{{$user->email}}">
                             <label for="floatingInput">Email address(Nullable)</label>
                         </div>
-                        <div>
-                            <select class="form-select" name="roles" multiple id="floatingSelect"
-                                    aria-label="Floating label select example">
-                                @foreach($roles as $id=>$item)
-                                    <option @if( in_array($id, $user->roles->pluck('id')->toArray())) selected
-                                            @endif value="{{$id}}">{{$item}}</option>
-                                @endforeach
-                            </select>
-                            <label for="floatingSelect">Works with selects</label>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach($roles as $id=>$item)
+                                <input class="form-check" name="roles[]" type="checkbox"
+                                       @if( in_array($id, $user->roles->pluck('id')->toArray())) checked
+                                       @endif value="{{$id}}">{{$item}}
+                            @endforeach
                         </div>
                         <button class="btn btn-primary mt-3" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

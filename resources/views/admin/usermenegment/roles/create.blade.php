@@ -20,15 +20,12 @@
                             <label for="floatingInput">Title</label>
                         </div>
 
-                        <div>
-                            <select class="form-select" name="permissions" multiple id="floatingSelect"
-                                    aria-label="Floating label select example">
+                            <div class="d-flex flex-wrap gap-2">
                                 @foreach($permissions as $id=>$item)
-                                    <option value="{{$id}}">{{$item}}</option>
+                                    <input class="form-check" name="permissions[]" type="checkbox"
+                                            value="{{$id}}">{{$item}}
                                 @endforeach
-                            </select>
-                            <label for="floatingSelect">Works with selects</label>
-                        </div>
+                            </div>
                         <button class="btn btn-primary mt-3" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-person-plus-fill" viewBox="0 0 16 16">

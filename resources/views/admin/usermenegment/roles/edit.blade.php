@@ -20,15 +20,12 @@
                                    placeholder="" value="{{$role->title}}">
                             <label for="floatingInput">Title</label>
                         </div>
-                        <div>
-                            <select class="form-select" name="permissions" multiple id="floatingSelect"
-                                    aria-label="Floating label select example">
-                                @foreach($permissions as $id=>$item)
-                                    <option @if( in_array($id, $role->permissions->pluck('id')->toArray())) selected
-                                            @endif value="{{$id}}">{{$item}}</option>
-                                @endforeach
-                            </select>
-                            <label for="floatingSelect">Works with selects</label>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach($permissions as $id=>$item)
+                                <input class="form-check" name="permissions[]" type="checkbox"
+                                       @if( in_array($id, $role->permissions->pluck('id')->toArray())) checked
+                                       @endif value="{{$id}}">{{$item}}
+                            @endforeach
                         </div>
                         <button class="btn btn-primary mt-3" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
