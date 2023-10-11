@@ -17,4 +17,5 @@ class Subject extends Model
     {
         $this->hasMany(Teachers::class);
     }
+
 }

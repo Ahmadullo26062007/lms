@@ -18,4 +18,19 @@ class Course extends Model
         'min_members',
         'price',
     ];
+
+   public function teacher()
+    {
+        return $this->belongsTo(Teachers::class);
+    }
+
+   public function category()
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class);
+    }
 }

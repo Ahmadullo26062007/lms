@@ -17,7 +17,10 @@ return new class extends Migration
             $table->string("type");
             $table->string("taking_present")->nullable()->default(null);
             $table->string("price")->nullable()->default(null);
+            $table->unsignedBigInteger('teacher_id');
 
+
+            $table->foreign('teacher_id')->references('id')->on('teachers');
             $table->timestamps();
         });
     }

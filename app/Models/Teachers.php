@@ -10,7 +10,7 @@ class Teachers extends Model
     use HasFactory;
 
     protected $fillable = [
-        "user_id",  
+        "user_id",
         "role_id",
         "subject_id",
         "salary_id",
@@ -27,5 +27,13 @@ class Teachers extends Model
     public function subject()
     {
         $this->belongsTo(Subject::class);
+    }
+    public function salaries()
+    {
+        return $this->hasMany(Teachers_salary::class);
+    }
+    public function coursee()
+    {
+        $this->hasMany(Course::class);
     }
 }

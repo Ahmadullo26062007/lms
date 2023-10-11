@@ -15,4 +15,8 @@ class Teachers_salary extends Model
         'month',
         'year',
     ];
+    public function teacher()
+    {
+        return $this->belongsTo(Teachers::class);
+    }
 }
