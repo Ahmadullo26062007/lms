@@ -27,7 +27,7 @@ Route::resource('/users', \App\Http\Controllers\UsersController::class);
 Route::resource('/roles', \App\Http\Controllers\RoleController::class);
 Route::resource('/permissions', \App\Http\Controllers\PermissionController::class);
 Route::resource('/students', \App\Http\Controllers\StudentController::class);
-Route::resource('/teachers', \App\Http\Controllers\TeachersController::class);
+Route::resource('/teachers', \App\Http\Controllers\TeacherController::class);
 Route::resource('/courses', \App\Http\Controllers\CourseController::class);
 Route::resource('/subjects', \App\Http\Controllers\SubjectController::class);
 Route::resource('/messages', \App\Http\Controllers\MessageController::class);
