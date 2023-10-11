@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('frontend.index');
+})->name('front');
+
+Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/admin', function (){
     return view('admin.index');
@@ -34,9 +36,9 @@ Route::resource('/messages', \App\Http\Controllers\MessageController::class);
 Route::resource('/expenses', \App\Http\Controllers\ExpenseController::class);
 Route::resource('/salaries', \App\Http\Controllers\SalaryController::class);
 Route::resource('/student_payments', \App\Http\Controllers\StudentPaymentController::class);
-Route::resource('/teacher_payments', \App\Http\Controllers\TeachersSalaryController::class);
+Route::resource('/teacher_payments', \App\Http\Controllers\TeacherSalaryController::class);
 
-
+});
 
 
 

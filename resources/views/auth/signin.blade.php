@@ -29,6 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('back/css/style.css')}}" rel="stylesheet">
+    @livewireStyles
 </head>
 
 <body>
@@ -57,7 +58,7 @@
     <script src="{{asset('back/lib/tempusdominus/js/moment.min.js')}}"></script>
     <script src="{{asset('back/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
     <script src="{{asset('back/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-
+    @livewireScripts
     <!-- Template Javascript -->
     <script src="{{asset('back/js/main.js')}}"></script>
 </body>
