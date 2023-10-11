@@ -28,8 +28,11 @@ Route::resource('/students', \App\Http\Controllers\StudentController::class);
 Route::resource('/teachers', \App\Http\Controllers\TeachersController::class);
 Route::resource('/courses', \App\Http\Controllers\CourseController::class);
 Route::resource('/subjects', \App\Http\Controllers\SubjectController::class);
-Route::resource('/messages', \App\Http\Controllers\MessagesController::class);
+Route::resource('/messages', \App\Http\Controllers\MessageController::class);
 Route::resource('/expenses', \App\Http\Controllers\ExpenseController::class);
+Route::resource('/salaries', \App\Http\Controllers\SalaryController::class);
+Route::resource('/student_payments', \App\Http\Controllers\StudentPaymentController::class);
+Route::resource('/teacher_payments', \App\Http\Controllers\TeachersSalaryController::class);
 
 
 

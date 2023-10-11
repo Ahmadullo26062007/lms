@@ -70,14 +70,18 @@
                         <a href="{{route('permissions.index')}}" class="dropdown-item {{ (request()->is('permissions*')) ? 'active' : '' }}">Permissions</a>
                     </div>
                 </div>
+                <a href="{{route('students.index')}}" class="nav-item nav-link {{ (request()->is('students*')) ? 'active' : '' }}"><i class="fa fa-th me-2"></i>Students</a>
+                <a href="{{route('teachers.index')}}" class="nav-item nav-link {{ (request()->is('teachers*')) ? 'active' : '' }}"><i class="fa fa-th me-2"></i>Teachers</a>
+                <a href="{{route('courses.index')}}" class="nav-item nav-link {{ (request()->is('courses*')) ? 'active' : '' }}"><i class="fa fa-th me-2"></i>Courses</a>
+                <a href="{{route('subjects.index')}}" class="nav-item nav-link {{ (request()->is('subjects*')) ? 'active' : '' }}"><i class="fa fa-th me-2"></i>Subjects</a>
+                <a href="{{route('messages.index')}}" class="nav-item nav-link {{ (request()->is('messages*')) ? 'active' : '' }}"><i class="fa fa-th me-2"></i>Messages</a>
+
                 <div class="nav-item dropdown">
-
-                    <a href="#" class="nav-link dropdown-toggle {{ (request()->is('element')) ? 'active' : '' }} {{ (request()->is('button')) ? 'active' : '' }} {{ (request()->is('typography')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                    <a href="#" class="nav-link dropdown-toggle {{ (request()->is('element')) ? 'active' : '' }} {{ (request()->is('button')) ? 'active' : '' }} {{ (request()->is('typography')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Payments</a>
                     <div class="dropdown-menu bg-transparent border-0">
-
+                        <a href="{{route('expenses.index')}}" class="nav-item nav-link {{ (request()->is('expenses*')) ? 'active' : '' }}"><i class="fa fa-th me-2"></i>Expenses</a>
                     </div>
                 </div>
-                <a href="{{route('students.index')}}" class="nav-item nav-link {{ (request()->is('students*')) ? 'active' : '' }}"><i class="fa fa-th me-2"></i>Students</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ (request()->is('404')) ? 'active' : '' }} {{ (request()->is('blank')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                     <div class="dropdown-menu bg-transparent border-0">
