@@ -24,50 +24,47 @@ Route::get('/admin', function (){
 Route::resource('/users', \App\Http\Controllers\UsersController::class);
 Route::resource('/roles', \App\Http\Controllers\RoleController::class);
 Route::resource('/permissions', \App\Http\Controllers\PermissionController::class);
+Route::resource('/students', \App\Http\Controllers\StudentController::class);
+Route::resource('/teachers', \App\Http\Controllers\TeachersController::class);
+Route::resource('/courses', \App\Http\Controllers\CourseController::class);
+Route::resource('/subjects', \App\Http\Controllers\SubjectController::class);
+Route::resource('/messages', \App\Http\Controllers\MessagesController::class);
+Route::resource('/expenses', \App\Http\Controllers\ExpenseController::class);
 
+
+
+
+
+Route::get('/front-courses', function (){
+    return view('frontend.courses');
+})->name('front_courses');
+
+Route::get('/front-expenses', function (){
+    return view('frontend.expenses');
+})->name('front_expenses');
+
+Route::get('/front-messages', function (){
+    return view('frontend.messages');
+})->name('front_messages');
+
+Route::get('/front-salaries', function (){
+    return view('frontend.salaries');
+})->name('front_salaries');
+
+Route::get('/front-students', function (){
+    return view('frontend.students');
+})->name('front_students');
+
+Route::get('/front-subjects', function (){
+    return view('frontend.subjects');
+})->name('front_subjects');
+
+Route::get('/front-teachers', function (){
+    return view('frontend.teachers');
+})->name('front_teachers');
+
+@include('auth.php');
 
 Route::get('/404', function (){
     return view('admin.404');
 })->name('404');
-
-Route::get('/blank', function (){
-    return view('admin.blank');
-})->name('blank');
-
-Route::get('/button', function (){
-    return view('admin.button');
-})->name('button');
-
-Route::get('/chart', function (){
-    return view('admin.chart');
-})->name('chart');
-
-Route::get('/element', function (){
-    return view('admin.element');
-})->name('element');
-
-Route::get('/form', function (){
-    return view('admin.form');
-})->name('form');
-
-Route::get('/signin', function (){
-    return view('admin.signin');
-})->name('signin');
-
-Route::get('/signup', function (){
-    return view('admin.signup');
-})->name('signup');
-
-Route::get('/table', function (){
-    return view('admin.table');
-})->name('table');
-
-Route::get('/typography', function (){
-    return view('admin.typography');
-})->name('typography');
-
-Route::get('/widget', function (){
-    return view('admin.widget');
-})->name('widget');
-
-
