@@ -63,7 +63,7 @@ Route::get('/front-teachers', function (){
     return view('frontend.teachers');
 })->name('front_teachers');
 
-
+@include('auth.php');
 
 Route::get('/404', function (){
     return view('admin.404');
