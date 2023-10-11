@@ -71,7 +71,8 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle {{ (request()->is('element')) ? 'active' : '' }} {{ (request()->is('button')) ? 'active' : '' }} {{ (request()->is('typography')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                    <a href="{{ route('students.index') }}" class="nav-link  {{ (request()->is('students*')) ? 'active' : '' }} {{ (request()->is('button')) ? 'active' : '' }} {{ (request()->is('students*')) ? 'active' : '' }}" ><i class=""></i>Students</a>
+                    <a href="#" class="nav-link dropdown-toggle {{ (request()->is('element')) ? 'active' : '' }} {{ (request()->is('button')) ? 'active' : '' }} {{ (request()->is('typography')) ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>   
                     <div class="dropdown-menu bg-transparent border-0">
                         <a href="{{route('button')}}" class="dropdown-item {{ (request()->is('button*')) ? 'active' : '' }}">Buttons</a>
                         <a href="{{route('typography')}}" class="dropdown-item {{ (request()->is('typography*')) ? 'active' : '' }}">Typography</a>

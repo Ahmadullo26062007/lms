@@ -69,3 +69,5 @@ Route::get('/typography', function (){
 Route::get('/widget', function (){
     return view('admin.widget');
 })->name('widget');
+
+
