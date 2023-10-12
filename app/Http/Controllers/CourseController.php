@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Subject;
+use App\Models\Teachers;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -11,7 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Course::with('teacher')->get();
+        return view('admin.courses.index', compact('courses'));
     }
 
     /**
@@ -19,7 +23,9 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        $teachers = Teachers::pluck('first_name', 'id');
+        $categories=Subject::pluck('title','id');
+        return view('admin.courses.create',compact('teachers','categories'));
     }
 
     /**
@@ -27,7 +33,24 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'teacher_id'=>'required',
+            'category_id'=>'required',
+            'image'=>'required',
+            'price'=>'required',
+            'min_members'=>'required',
+            'description'=>'required',
+        ]);
+        $data = $request->all();
+        $file = $request->file('image');
+        $image_name = uniqid() . $file->getClientOriginalName();
+        $data['image'] = $image_name;
+        $file->move(public_path('images'), $image_name);
+
+        Course::create($data);
+        return redirect()->route('courses.index');
+
     }
 
     /**
@@ -35,7 +58,8 @@ class CourseController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $course=Course::find($id);
+        return view('admin.courses.show',compact('course'));
     }
 
     /**
@@ -43,7 +67,10 @@ class CourseController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $course=Course::find($id);
+        $teachers = Teachers::pluck('first_name', 'id');
+        $categories=Subject::pluck('title','id');
+        return view('admin.courses.edit',compact('course','teachers','categories'));
     }
 
     /**
@@ -51,7 +78,18 @@ class CourseController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $course=Course::find($id);
+        $data = $request->all();
+        $file = $request->file('image');
+        $image_name = uniqid().$file->getClientOriginalName();
+        $data['image'] = $image_name;
+        if ($course->image) {
+            $file->move(public_path('images'), $image_name);
+        }else{
+            $file->move(public_path('images'), $image_name);
+        }
+        $course->update($data);
+        return redirect()->route('courses.index');
     }
 
     /**
@@ -59,6 +97,8 @@ class CourseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $course=Course::find($id);
+        $course->delete();
+        return back();
     }
 }
