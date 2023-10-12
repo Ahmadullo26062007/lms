@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Messages;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -11,7 +12,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        $messages=Messages::with('user')->get();
+        return view('admin.messages.index',compact('messages'));
     }
 
     /**

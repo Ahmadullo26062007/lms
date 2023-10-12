@@ -11,7 +11,7 @@ class Messages extends Model
 
     protected $fillable=[
         'user_id',
-       'typing_person',
+       'suply_text',
         'text',
     ];
 
