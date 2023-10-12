@@ -14,11 +14,11 @@ class StudentSeeder extends Seeder
     public function run(): void
     {
         Student::insert([
-            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon','last_name'=>'Valijonov'],
-            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon1','last_name'=>'Valijonov1'],
-            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon2','last_name'=>'Valijonov2'],
-            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon3','last_name'=>'Valijonov3'],
-            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon4','last_name'=>'Valijonov4'],
+            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon','last_name'=>'Valijonov', 'phone_number' => '123456789'],
+            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon1','last_name'=>'Valijonov1', 'phone_number' => '123456789'],
+            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon2','last_name'=>'Valijonov2', 'phone_number' => '123456789'],
+            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon3','last_name'=>'Valijonov3', 'phone_number' => '123456789'],
+            ['user_id'=>2,'role_id'=>5,'first_name'=>'Alijon4','last_name'=>'Valijonov4', 'phone_number' => '123456789'],
         ]);
     }
 }

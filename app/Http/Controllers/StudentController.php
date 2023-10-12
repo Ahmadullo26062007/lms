@@ -33,11 +33,13 @@ class StudentController extends Controller
         $request->validate([
             'first_name' => 'min:3|max:255|string',
             'last_name' => 'min:3|max:255|string',
+            'phone_number' => 'integer',
         ]);
 
         Student::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
+            'phone_number' => $request->phone_number,
             'user_id' => 2,
             'role_id' => 5,
         ]);

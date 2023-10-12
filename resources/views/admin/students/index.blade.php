@@ -30,6 +30,7 @@
                                     <th scope="row">{{ $student->id }}</th>
                                     <td>{{ $student->first_name }}</td>
                                     <td>{{ $student->last_name }}</td>
+                                    <td>{{ $student->phone_number }}</td>
                                     <td>
                                         <a href="{{ route('students.edit', $student) }}" class="btn btn-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

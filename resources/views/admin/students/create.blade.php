@@ -26,6 +26,13 @@
                             <label for="last_name">Lastname</label>
                         </div>
 
+                        <div class="form-floating mb-3">
+                            <input type="number" name="phone_number" class="form-control text-white" id="phone_number"
+                                placeholder="">
+                            <label for="phone_number">Phone Number</label>
+                        </div>
+
+
                         <button class="btn btn-primary mt-3" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-person-plus-fill" viewBox="0 0 16 16">

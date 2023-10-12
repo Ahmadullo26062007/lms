@@ -17,15 +17,22 @@
                         @csrf
 
                         <div class="form-floating mb-3">
-                            <input type="text" name="first_name" class="form-control text-white" id="floatingInput"
+                            <input type="text" name="first_name" class="form-control text-white" id="first_name"
                                 placeholder="" value="{{ $student->first_name }}">
-                            <label for="floatingInput">Firstname</label>
+                            <label for="first_name">Firstname</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="last_name" class="form-control text-white" id="floatingInput"
+                            <input type="text" name="last_name" class="form-control text-white" id="last_name"
                                 placeholder="" value="{{ $student->last_name }}">
-                            <label for="floatingInput">Lastname</label>
+                            <label for="last_name">Lastname</label>
                         </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="number" name="phone_number" class="form-control text-white" id="phone_number"
+                                placeholder="" value="{{ $student->phone_number }}">
+                            <label for="phone_number">Phone number</label>
+                        </div>
+                        
                         
                         <button class="btn btn-primary mt-3" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
