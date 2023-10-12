@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -11,9 +12,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-
-        @dd("what's poppin");
-        return view('admin.students.index');
+        $students = Student::orderByDesc('id')->get();
+        return view('admin.students.index', compact('students'));
     }
 
     /**
@@ -21,7 +21,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.students.create');
     }
 
     /**
@@ -29,7 +29,20 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'first_name' => 'min:3|max:255|string',
+            'last_name' => 'min:3|max:255|string',
+        ]);
+
+        Student::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'user_id' => 2,
+            'role_id' => 5,
+        ]);
+
+        return redirect()->route('students.index');
     }
 
     /**
@@ -43,17 +56,19 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Student $student)
     {
-        //
+        return view('admin.students.edit', compact('student'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Student $student)
     {
-        //
+        $student->update($request->all());
+
+        return redirect()->route('students.index');
     }
 
     /**
