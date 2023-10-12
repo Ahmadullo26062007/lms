@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreign("subject_id")->references('id')->on("subjects");
             $table->foreign("user_id")->references("id")->on("users");
             $table->foreign("role_id")->references("id")->on("roles");
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }

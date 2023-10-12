@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Teachers extends Model
 {
-    use HasFactory;
+    use HasFactory,SoftDeletes;
 
     protected $fillable = [
         "user_id",
@@ -21,12 +22,12 @@ class Teachers extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+       return $this->belongsTo(User::class);
     }
 
     public function subject()
     {
-        $this->belongsTo(Subject::class);
+        return $this->belongsTo(Subject::class);
     }
     public function salaries()
     {
@@ -34,6 +35,10 @@ class Teachers extends Model
     }
     public function coursee()
     {
-        $this->hasMany(Course::class);
+        return $this->hasMany(Course::class);
     }
+    const GENDER=[
+        '0'=>'ayol',
+        '1'=>'erkak'
+    ];
 }

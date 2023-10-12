@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Subject;
 use App\Models\Teachers;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -31,7 +32,23 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       dd($request->all());
+       $request->validate([
+           'firstname'=>'required',
+           'lastname'=>'required',
+           'subject_id'=>'required',
+           'password'=>'required',
+           'phonenumber'=>'required|numeric',
+
+       ]);
+       $u= \App\Models\User::create([
+           "name" => $request->firstname,
+           "password" => bcrypt($request->password),
+           "email" => $request->email,
+           "phone_number" => $request->phonenumber
+       ]);
+
+
     }
 
     /**
@@ -63,6 +80,8 @@ class TeacherController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+      $t=Teachers::find($id);
+      $t->delete();
+      return redirect()->route('teachers.index');
     }
 }
