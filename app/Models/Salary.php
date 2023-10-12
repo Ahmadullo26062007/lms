@@ -15,8 +15,4 @@ class Salary extends Model
         "price",
     ];
 
-    public function teacher()
-    {
-        $this->belongsTo(Teachers::class);
-    }
 }
