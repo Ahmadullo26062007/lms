@@ -46,7 +46,7 @@
                                                     d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                             </svg>
                                         </a>
-                                        <form class="d-inline" action="{{ route('students.destroy', $student->id) }}"
+                                        <form class="d-inline" action="{{ route('students.destroy', $student) }}"
                                             method="post" onsubmit="return confirm('{{ trans('Are you sure?') }}');">
                                             @method('DELETE')
                                             @csrf
