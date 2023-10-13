@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Messages;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -21,7 +22,8 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+        $user=User::pluck('name','id');
+        return view('admin.messages.create',compact('user'));
     }
 
     /**
@@ -29,7 +31,8 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Messages::create($request->all());
+        return redirect()->route('messages.index');
     }
 
     /**
@@ -37,7 +40,8 @@ class MessageController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $message=Messages::find($id);
+        return view('admin.messages.show',compact('message'));
     }
 
     /**
@@ -61,6 +65,8 @@ class MessageController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $message=Messages::find($id);
+        $message->delete();
+        return back();
     }
 }

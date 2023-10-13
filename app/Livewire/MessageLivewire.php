@@ -13,11 +13,10 @@ class MessageLivewire extends Component
         $this->message=$message;
     }
 
-    public function message()
+    public function send()
     {
-        dd(1);
         $this->message->update([
-            'suply_text'=>$this->text
+            'suply_text'=>$this->suply_text
         ]);
         return redirect()->route('messages.index');
     }

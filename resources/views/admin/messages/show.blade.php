@@ -5,39 +5,23 @@
             <div class="col-12">
 
                 <div class="bg-secondary rounded h-100 p-4">
-                    <h6 class="mb-4">Course show </h6>
+                    <h6 class="mb-4">Message show </h6>
                     <table class="table table-dark my-0">
                         <tr>
-                            <th>Title</th>
-                            <td>{{$course->title}}</td>
+                            <th>Name</th>
+                            <td>{{$message->user->name}}</td>
                         </tr>
                         <tr>
-                            <th>Teacher</th>
-                            <td>{{$course->teacher->first_name}} {{$course->teacher->last_name}}</td>
+                            <th>Text</th>
+                            <td>@if($message->text){{$message->text}} @else <span class="bg bg-danger">There is no answer</span> @endif</td>
                         </tr>
                         <tr>
-                            <th>Description</th>
-                            <td>{{$course->description}}</td>
+                            <th>Suply text</th>
+                            <td>{{$message->suply_text}}</td>
                         </tr>
-                        <tr>
-                            <th>Price</th>
-                            <td>{{$course->price}}</td>
-                        </tr>
-                        <tr>
-                            <th>Min Members</th>
-                            <td>{{$course->min_members}}</td>
-                        </tr>
-                        <tr>
-                            <th>Category</th>
-                            <td>{{$course->category->title}}</td>
-                        </tr>
-                        <tr>
-                            <th>Image</th>
-                            <td><img width="550px" height="300px" src="{{asset('images/'.$course->image)}}"
-                                     alt="Image"></td>
-                        </tr>
+
                     </table>
-                    <a class="btn btn-danger mt-3" href="{{route('courses.index')}}">
+                    <a class="btn btn-danger mt-3" href="{{route('messages.index')}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              class="bi bi-arrow-left" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
