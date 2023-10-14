@@ -13,6 +13,7 @@ class Salary extends Model
         "type",
         "taking_present",
         "price",
+        "teacher_id",
     ];
 
 }

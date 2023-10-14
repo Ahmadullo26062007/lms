@@ -59,12 +59,14 @@ class Create extends Component
               'type'=>0,
               'taking_present'=>$this->persent,
                 'price'=>'0',
+                'teacher_id'=>$t->id
             ]);
         }elseif ($this->month_type){
             Salary::create([
                 'type'=>0,
                 'price'=>$this->price,
-                'taking_present'=>'0'
+                'taking_present'=>'0',
+                'teacher_id'=>$t->id
             ]);
         }
       return  redirect()->route('teachers.index');

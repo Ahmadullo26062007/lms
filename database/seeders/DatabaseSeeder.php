@@ -38,8 +38,8 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             SubjectSeeder::class,
             StudentSeeder::class,
-            SalarySeeder::class,
             TeachersSeeder::class,
+            SalarySeeder::class,
             CourseSeeder::class
         ]);
     }

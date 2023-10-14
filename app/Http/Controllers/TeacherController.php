@@ -64,7 +64,8 @@ class TeacherController extends Controller
      */
     public function edit(string $id)
     {
-        //
+      $teacher=Teachers::find($id);
+      return view('admin.teachers.edit',compact('teacher'));
     }
 
     /**
