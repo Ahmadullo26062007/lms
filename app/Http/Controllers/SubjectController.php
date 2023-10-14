@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -11,7 +12,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        $subjects=Subject::with('teacher')->get();
+        return view('admin.subjects.index',compact('subjects'));
     }
 
     /**
@@ -19,7 +21,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.subjects.create');
     }
 
     /**
@@ -27,7 +29,11 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required'
+        ]);
+        Subject::create($request->all());
+        return redirect()->route('subjects.index');
     }
 
     /**
@@ -43,7 +49,8 @@ class SubjectController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $subject=Subject::find($id);
+        return view('admin.subjects.edit',compact('subject'));
     }
 
     /**
@@ -51,7 +58,12 @@ class SubjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $subject=Subject::find($id);
+        $request->validate([
+            'title'=>'required'
+        ]);
+        $subject->update($request->all());
+        return redirect()->route('subjects.index');
     }
 
     /**
@@ -59,6 +71,8 @@ class SubjectController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $subject=Subject::find($id);
+        $subject->delete();
+        return back();
     }
 }
